@@ -23,6 +23,10 @@ spec:
               script: |
                 #! /bin/bash
                 ls -al $(inputs.resources.source.path)
+        podTemplate:
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1001 
         inputs:
           resources:
             - name: source
